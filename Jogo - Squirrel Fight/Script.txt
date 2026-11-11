@@ -1,0 +1,119 @@
+Com base nas informações abaixo, crie um jogo em java script
+
+
+
+PROPOSTA DO JOGO:  O Jogo "Squirrel Fight" é um jogo de dois jogadores nos estilo 2d tipo Super Mario.O Player 1 controlará o Esquilo1 pelas teclas direcionais "←, ↑ , →"  . O Player 2 controlará o Esquilo2  pelas teclas "WASD". O jogo terá apenas um cenário, os esquilos terão que competir por 1:30 minutos para ver quem coleta mais nozes que estarão espalhadas pelas plataformas do cenário. o jogo terá rodadas, cada uma com 1:30 minutos, se um esquilo ganha uma ele recebe uma coroa do lado de seu perfil , o esquilo que mais tiver coroas no final das 3 rodadas vencerá. Proporção do jogo é de 200 x 200 , caso precise de mais adicione bordas.
+
+------------------------------------------------------------------------------ /// ------------------------------ /// ----------------------------- /// --------------------------------------------------------------------------
+
+COMO EXECUTAR:
+
+Em nossa pasta esta a capa do jogo, em seguida temos a tela inicial, com os botões de saída, configurações e de jogar.
+    
+    Se a tecla de "Exit" for clicada o  jogo deve fechar , se a tecla "Conf." for pressionada abrira a tela de configuração da tela inicial, também adicionamos a tela de configuração em nossa pasta com o nome "SpriteConfiguraçãoTelaInicial". A configuração contem a opção de diminuir o volume dos sons e da música, também possui uma seta no canto inferior esquerdo, que nos permite voltar a tela inicial. 
+    Se a tecla "Play" for apertada, ira abrir a tela do tutoria. Anexamos na pasta de cenários um exemplar de como a tela de tutorial deverá ser, o nome do arquivo é
+ "Exemplar do Tutorial".
+   Em nossa pasta "Botões" está todos os sprites dos botões com os nomes "BotãoPlay" "BotãoConf" "BotãoExit" 
+
+COMO DEVE SER A TELA DE TUTORIAL:
+
+   Em nossa  pasta de sprites do cenário está o Sprite da tela do tutorial, com o nome de "SpriteTutorial".
+   No tutorial adicione a animação do esquilo parado e um balão de fala, assim como no exemplar. Adicione as falas dentro do balão, não se esqueça de colocar o som da fala do esquilo em todos momentos em que ele fala.
+
+- 1º fala : "Olá, jogadores! Sejam bem-vindos ao meu mundo, onde o tempo é precioso e cada escolha faz a diferença!"
+
+
+- 2º fala : "O Player 1 irá se movimentar usando as teclas W, A, S e D, enquanto o Player 2 utilizará as teclas direcionais do teclado."
+
+
+- 3º fala : "O objetivo de vocês é coletar o máximo de nozes possível em 1 minuto e 30 segundos! Para isso, pulem sobre as plataformas, explorem o cenário e peguem todas as nozes que conseguirem!"
+
+
+- 4º fala : "A cada rodada vencida, o jogador ganha uma coroa. Quem conseguir conquistar 3 coroas primeiro será o grande campeão!"
+
+
+- 5º fala : "Preparem-se, jogadores! Usem suas habilidades, sejam rápidos e estratégicos, porque cada noz pode fazer a diferença!"
+
+
+- 6º fala : "Que comece a competição! Quem será o rei ou a rainha das nozes?"
+
+
+   Cada fala deverá durar 10 segundos, após todas a falas terem aparecido o jogo deve iniciar.
+
+
+INÍCIO DO JOGO
+    
+   Não se esqueça que o jogo é 2d, os esquilos tem gravidade, eles pulam e caem, a única parte em que eles conseguem pisar é em cima das plataformas, eles conseguem pular sobre e por elas, mas não as atravessam quando caem.
+    As nozes vão spawnar de 2 em 2 a cada 5 segundo, elas não devem aparecer dentro das plataformas, e sim sobre elas ou no ar, lugares que os esquilos conseguem coletar ao pular ou passar por elas . Apenas 30% das nozes que vão spawnar serão douradas.
+
+    Após o tutorial a partida deve iniciar com uma contagem regressiva de 3 segundos, após a contagem a partida iniciara e os esquilos terão que pular entre as plataformas para coletar as nozes, em nossa pasta tem a imagem do cenário, porém,  pra que seja fácil de identificar quais partes são as plataformas em que os esquilos podem pisar, separei o sprite de somente as plataformas que estão na pasta de sprites do cenário, o nome do arquivo é "SpritePlataforma" o sprite que contém somente o fundo também está lá com o nome de "SpriteFundo"  que facilitará até em outras pates do jogo.
+
+    Após coletadas as nozes irão contabilizar na contagem de nozes, que também temos em nossa pasta com o nome de "ContagemDasNozesEsquilo1" e "ContagemDasNozesEsquilo2", adicione um ponto no contabilizador para cada noz coletada, os números que serão usados nesse contabilizador também estão em nossa pasta com o nome de "SpriteDosNumeros" , colocamos na pasta um exemplar de como o contabilizador com os números devem ficar, o nome do arquivo é "ExemplarDaContagem" . A noz comum tem valor de 1 ponto, já a noz dourada que aparece mais raramente tem o valor de 3 pontos as duas estão presentes em nossa pasta com suas animações, os nomes são "SpriteAnimaçãoNozComum"  e "SpriteAnimçãoNozDourada" .
+    Como foi dito cada rodada deve durar 1:30 que será contado no temporizador que ficará na parte superior do centro da tela, anexamos o arquivo dele em nossa pasta com o nome "PlacarDoTemporizador" , após esse tempo acabar o jogador que tiver coletado mais nozes receberá uma coroa do lado de seu contabilizador , o arquivo da coroa está em nossa pasta com o nome  "SpriteCoroa" , o jogador que receber 3 coroas ganhará o jogo.
+
+    O contabilizador do Esquilo1 deve estar localizado no canto inferior direito, o nome do arquivo do contabilizador é; "ContagemDasNozesEsquilo1" . Enquanto o contabilizador do Esquilo2 deve estar no canto inferior esquerdo, o nome do arquivo do contabilizador é; "ContagemDasNozesEsquilo2".
+    O esquilo vencedor ira realizar a animação de vitória e aparecerá a faixa de vitória em cima da cabeça do esquilo, o arquivo pixel da faixa esta em nossa pasta com o nome "SpriteFaixaDeVitoria" . O esquilo perdedor irá realizar a animação de derrota e aparecerá a faixa de derrota em cima da cabeça do esquilo, o arquivo pixel da faixa esta em nossa pasta com o nome "SpriteFaixaDeDerrota" .
+   Quando uma rodada acabar o temporizaor reiniciará e irá temporizar a outra rodada.
+
+   Durante o jogo deve ser possível acessar a tela de configuração. Adicione o botão de configuração no meio do canto inferior da tela, ele esta na pasta de Botões com o nome de '"BotãoConf", ao clicar no botão o jogo irá pausar e a tela de configuração do jogo deve abrir, nela tem as mesmas configurações da outra , volume, música, etc. A única diferença é que nessa o botão de seta fará com que o jogo despause e volte a rodar. Outra variação é que terá o botão de "exit" que fará com que o jogo volte para tela inicial . Essa variação da tela de configuração também está em nossa pasta de sprites, o nome de seu arquivo é "SpriteConfiguraçãoJogo".
+
+
+MECÂNICA: 
+
+* Mecânica do esquilo1:
+
+- Andar para frente (tecla ''D" )
+- Andar para trás (tecla ''A" )
+- Pular (tecla "W")
+
+* Mecânica do esquilo2:
+
+- Andar para frente (tecla ''→" )
+- Andar para trás (tecla ''←" )
+- Pular (tecla "↑")
+
+*Apertar botões do jogo com o botão esquerdo do mouse*
+
+
+----///----
+
+
+ANIMAÇÕES : 
+
+  Em nossa pasta  temos uma sub pasta com o nome "Animações" que contém as animações das nozes e dos esquilos 1 e 2, todos os dois possuem uma animação para quando estiverem parados, andando, pulando, comemorando a vitória ou perdendo.
+
+ * Arquivos de animações do esquilo 1 em nossa pasta:
+
+-  AnimaçãoParadoEsquilo1
+-  AnimaçãoAndarEsquilo1
+-  AnimaçãoPularEsquilo1
+-  AnimaçãoVitoriaEsquilo1
+-  AnimaçãoDerrotaEsquilo1
+
+
+----///----
+
+
+* Arquivos de animações do esquilo 2 em nossa pasta:
+
+-  AnimaçãoParadoEsquilo2
+-  AnimaçãoAndarEsquilo2
+-  AnimaçãoPularEsquilo2
+-  AnimaçãoVitoriaEsquilo2
+-  AnimaçãoDerrotaEsquilo2
+
+SONS:
+
+  Em nossa pasta  temos uma sub pasta com o nome "Sons" que contém todos os sons presentes em nosso jogo:
+
+- Som da fala do esquilo (nome do arquivo : "SomFalaDoEsquilo")
+-Som de coletar a noz comum (nome do arquivo : "SomColetarNozComum")
+-Som de coletar a noz dourada (nome do arquivo : "SomColetarNo Dourada")
+-Som da contagem regressiva (nome do arquivo : "SomContagemRegressiva")
+-Som que irá tocar quando o jogo acabar e anunciarem o vencedor (nome do arquivo : "SomFimDoJogo")
+-Som do pulo do esquilo (nome do arquivo : "SomDoPulo")
+-Som da trilha sonora ("MúsicaInicial")
+-som da trilha sonora quando as rodadas começarem ("MúsicaInicialPlay") 
+
+A música Inicial vai tocar até a partida iniciar, após a partida iniciar a música que deve tocar é "MúsicaInicialPlay".
+
