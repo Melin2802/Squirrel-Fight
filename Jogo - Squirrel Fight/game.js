@@ -550,10 +550,10 @@ const game = {
     state: STATE.COVER,
     paused: false,
     players: [
-        // Esquilo1: W A S D
-        new Squirrel(1, { left: "KeyA", right: "KeyD", jump: "KeyW", down: "KeyS" }),
-        // Esquilo2: setas
-        new Squirrel(2, { left: "ArrowLeft", right: "ArrowRight", jump: "ArrowUp", down: "ArrowDown" }),
+        // Esquilo1 (começa à direita, contador no canto inferior direito): setas
+        new Squirrel(1, { left: "ArrowLeft", right: "ArrowRight", jump: "ArrowUp", down: "ArrowDown" }),
+        // Esquilo2 (começa à esquerda, contador no canto inferior esquerdo): W A S D
+        new Squirrel(2, { left: "KeyA", right: "KeyD", jump: "KeyW", down: "KeyS" }),
     ],
     nuts: [],
     crowns: { 1: 0, 2: 0 },
