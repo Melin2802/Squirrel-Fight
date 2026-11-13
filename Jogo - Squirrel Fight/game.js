@@ -440,13 +440,14 @@ const CONFIG_PANEL = { x: 40, y: 58, w: 121, h: 108 };
 
 function configButtons(inGame) {
     const px = CONFIG_PANEL.x, py = CONFIG_PANEL.y;
+    // à esquerda da barra fica o botão de mudo (X); à direita, o de som/música
     const list = [
-        { x: px + 13, y: py + 35, w: 15, h: 12, onClick: () => { settings.sfx = settings.sfx > 0 ? settings.sfx : 1; applyVolumes(); playSfx("nut"); } },
+        { x: px + 13, y: py + 35, w: 15, h: 12, onClick: () => { settings.sfx = 0; applyVolumes(); } },
         { x: px + 29, y: py + 36, w: 32, h: 8, slider: "sfx" },
-        { x: px + 62, y: py + 35, w: 15, h: 12, onClick: () => { settings.sfx = 0; applyVolumes(); } },
-        { x: px + 13, y: py + 56, w: 15, h: 12, onClick: () => { settings.music = settings.music > 0 ? settings.music : 0.6; applyVolumes(); } },
+        { x: px + 62, y: py + 35, w: 15, h: 12, onClick: () => { settings.sfx = settings.sfx > 0 ? settings.sfx : 1; applyVolumes(); playSfx("nut"); } },
+        { x: px + 13, y: py + 56, w: 15, h: 12, onClick: () => { settings.music = 0; applyVolumes(); } },
         { x: px + 29, y: py + 58, w: 32, h: 8, slider: "music" },
-        { x: px + 62, y: py + 56, w: 15, h: 12, onClick: () => { settings.music = 0; applyVolumes(); } },
+        { x: px + 62, y: py + 56, w: 15, h: 12, onClick: () => { settings.music = settings.music > 0 ? settings.music : 0.6; applyVolumes(); } },
         // seta: no menu volta para a tela inicial; no jogo despausa
         { x: px + 8, y: py + 84, w: 25, h: 17, onClick: () => {
             if (inGame) game.paused = false;

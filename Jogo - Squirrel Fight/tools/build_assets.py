@@ -76,6 +76,18 @@ def union_bbox(frames):
     return box
 
 
+def swap_config_icons(frame):
+    """Na tela de configuração, troca os botões de lugar: mudo (X) à esquerda
+    e som/música à direita, seguindo a barra (esquerda = 0%, direita = 100%)."""
+    frame = frame.copy()
+    for y0, y1 in ((280, 376), (448, 552)):  # linha do som, linha da música
+        left = frame.crop((104, y0, 216, y1))
+        right = frame.crop((496, y0, 608, y1))
+        frame.paste(right, (104, y0))
+        frame.paste(left, (496, y0))
+    return frame
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     meta = {}
@@ -86,6 +98,8 @@ def main():
         else:
             box = union_bbox(frames)
         cropped = [f.crop(box) for f in frames]
+        if name in ("configMenu", "configGame"):
+            cropped = [swap_config_icons(f) for f in cropped]
         fw, fh = cropped[0].size
         sheet = Image.new("RGBA", (fw * len(cropped), fh), (0, 0, 0, 0))
         for i, f in enumerate(cropped):
